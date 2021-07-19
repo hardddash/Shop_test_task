@@ -1,5 +1,6 @@
 import mysql from "mysql2";
 import * as dotenv from "dotenv";
+
 dotenv.config();
 
 export const db = mysql.createConnection({
@@ -8,3 +9,4 @@ export const db = mysql.createConnection({
     password: process.env.DB_PWD,
     database: process.env.DB_NAME
 });
+
