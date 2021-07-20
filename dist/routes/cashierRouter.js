@@ -39,7 +39,6 @@ exports.cashierRouter = cashierRouter;
 //create new cashier
 cashierRouter.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const newCashier = req.body;
-    //console.log(newCashier);
     cashierModel.createMethod(newCashier, (err, cashierId) => {
         if (err) {
             return res.status(500).json({ "message": err.message });
@@ -60,7 +59,6 @@ cashierRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function*
 cashierRouter.put("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     req.body.cashier_id = req.params.id;
     const cashier = req.body;
-    console.log(cashier);
     cashierModel.updateMethod(cashier, (err) => {
         if (err) {
             return res.status(500).json({ "message": err.message });

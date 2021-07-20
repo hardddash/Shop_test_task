@@ -4,7 +4,6 @@ exports.getTargetCashiers2 = exports.getTargetCashiers1 = exports.deleteMethod =
 const db_1 = require("../db");
 //Create
 const createMethod = (cashier, callback) => {
-    console.log("Create method");
     const queryString = "INSERT INTO Cashier (cashier_id, cashier_name, cashier_surname, sex, age, years_of_experience, previous_place_of_work, shop_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     db_1.db.query(queryString, [cashier.cashier_id, cashier.cashier_name, cashier.cashier_surname, cashier.sex, cashier.age, cashier.years_of_experience, cashier.previous_place_of_work, cashier.shop_id], (err, result) => {
         if (err) {
@@ -18,7 +17,6 @@ const createMethod = (cashier, callback) => {
 exports.createMethod = createMethod;
 //Read
 const getAllCashiers = (callback) => {
-    console.log("getAllCashiers method");
     const queryString = `SELECT * FROM Cashier`;
     db_1.db.query(queryString, (err, result) => {
         if (err) {
@@ -45,7 +43,6 @@ const getAllCashiers = (callback) => {
 exports.getAllCashiers = getAllCashiers;
 //Update
 const updateMethod = (cashier, callback) => {
-    console.log("Update method");
     const queryString = `UPDATE Cashier SET cashier_name=?, cashier_surname=?, sex=?, age=?, years_of_experience=?, previous_place_of_work=?, shop_id=? WHERE cashier_id=?`;
     db_1.db.query(queryString, [cashier.cashier_name, cashier.cashier_surname, cashier.sex, cashier.age, cashier.years_of_experience, cashier.previous_place_of_work, cashier.shop_id, cashier.cashier_id], (err, result) => {
         if (err) {
@@ -57,7 +54,6 @@ const updateMethod = (cashier, callback) => {
 exports.updateMethod = updateMethod;
 //Delete
 const deleteMethod = (cashierId, callback) => {
-    console.log("Delete method");
     const queryString = `DELETE FROM Cashier WHERE cashier_id=?`;
     db_1.db.query(queryString, cashierId, (err, result) => {
         if (err) {
