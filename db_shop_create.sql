@@ -1,4 +1,3 @@
-
 -- tables
 CREATE TABLE CashRegister (
     cashregister_id int NOT NULL,

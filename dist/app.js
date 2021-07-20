@@ -43,6 +43,12 @@ cashierQueries_1.getTargetCashiers2((err, result) => {
     console.log("Result of getTargetCashiers2 DB request:");
     console.log(result);
 });
+cashierQueries_1.getAllCashiers((err, result) => {
+    if (err)
+        throw err;
+    console.log("Result of getAllCashiers DB request:");
+    console.log(result);
+});
 app.listen(process.env.PORT, () => {
     console.log(`Server started running on port ${process.env.PORT}`);
 });
