@@ -1,5 +1,3 @@
-import {Shop} from "./shop";
-import {Cashier} from "./cashier";
 
 enum day {
     Monday = "Mo",
@@ -20,6 +18,6 @@ export interface Scheduler {
     scheduler_id: number,
     day_of_week: day,
     shift_time: shift,
-    cashier: Cashier,
-    shop: Shop
+    cashier_id: number
+    shop_id: number
 }

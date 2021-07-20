@@ -28,6 +28,7 @@ cashierRouter.get("/", async (req: Request, res: Response) => {
 
 //update cashier be cashier id
 cashierRouter.put("/:id", async (req: Request, res: Response) => {
+    req.body.cashier_id = req.params.id;
     const cashier: Cashier = req.body;
     cashierModel.updateMethod(cashier, (err: Error) => {
         if (err) {
@@ -40,7 +41,8 @@ cashierRouter.put("/:id", async (req: Request, res: Response) => {
 
 //delete cashier be cashier id
 cashierRouter.delete("/:id", async (req: Request, res: Response) => {
-    cashierModel.deleteMethod((err: Error) => {
+    const cashierId: number = Number(req.params.id);
+    cashierModel.deleteMethod(cashierId,(err: Error) => {
         if (err) {
             return res.status(500).json({"message": err.message});
         }
@@ -48,3 +50,5 @@ cashierRouter.delete("/:id", async (req: Request, res: Response) => {
         res.status(200).send();
     })
 });
+
+export {cashierRouter};

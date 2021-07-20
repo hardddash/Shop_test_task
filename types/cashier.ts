@@ -1,5 +1,3 @@
-import {Shop} from "./shop";
-
 enum sex {
     female = "female",
     male = "male",
@@ -14,5 +12,5 @@ export interface Cashier {
     age: number,
     years_of_experience: number,
     previous_place_of_work: null | string,
-    shop: Shop
+    shop_id: number
 }
