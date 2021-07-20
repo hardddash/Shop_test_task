@@ -67,7 +67,7 @@ export const updateMethod = (cashier: Cashier, callback: Function) => {
 }
 
 //Delete
-export const deleteMethod = (cashier: Cashier, callback: Function) => {
+export const deleteMethod = (callback: Function) => {
     const queryString = `DELETE Cashier WHERE cashier_id=?`;
     db.query(
         queryString,
